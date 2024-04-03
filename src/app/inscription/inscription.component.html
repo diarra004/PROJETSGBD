@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Inscription Étudiant</h2>
+        <form action="#" method="post">
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" name="nom" required><br>
+            <label for="prenom">Prénom:</label>
+            <input type="text" id="prenom" name="prenom" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Mot de passe:</label>
+            <input type="password" id="password" name="password" required><br>
+            <label for="confimpassword">Confirmer votre mot de passe:</label>
+            <input type="confimpassword" id="confimpassword" name="confimpassword" required><br>
+            <label for="niveau">Niveau:</label>
+            <select id="niveau" name="niveau" required>
+                <option value="">Sélectionner un niveau</option>
+                <option value="Première année">Première année</option>
+                <option value="Deuxième année">Deuxième année</option>
+                <option value="Troisième année">Troisième année</option>
+                <option value="Quatrieme année">Quatrieme année</option>
+                <option value="Cinquieme année">Cinquieme année</option>
+                <!-- Ajoutez d'autres options selon les besoins -->
+            </select><br>
+            <label for="niveau">Formation:</label>
+            <select id="classe" name="classe" required>
+                <option value="">Sélectionner votre formation</option>
+                <option value="GENIE INFORMATIQUE">GENIE INFORMATIQUE</option>
+                <option value="GENIE ELECTRIQUE">GENIE ELECTRIQUE</option>
+                <option value="GENIE MECANIQUE">GENIE MECANIQUE</option>
+                <option value="GENIE CHIMIQUEE">GENIE CHIMIQUE</option>
+                <option value="GESTION">GESTION</option>
+
+            </select><br>
+            <input type="submit" value="S'inscrire">
+            <a routerLink="/connexion">Vous avez deja un compte ? Connectez-vous</a>
+        </form>
+    </div>
+</body>
+</html>
