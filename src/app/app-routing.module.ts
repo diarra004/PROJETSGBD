@@ -4,12 +4,14 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { EtudiantComponent } from './etudiant/etudiant.component';
+import { MadickeComponent } from './madicke/madicke.component';
 
 const routes: Routes = [
   { path: '', component: AccueilComponent },
   { path: 'connexion', component: ConnexionComponent },
   {path : 'inscription',component: InscriptionComponent},
-  {path : 'etudiant',component:EtudiantComponent}
+  {path : 'etudiant',component:EtudiantComponent},
+  {path : 'madicke',component:MadickeComponent}
 ];
 
 @NgModule({

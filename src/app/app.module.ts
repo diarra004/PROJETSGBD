@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 
 
-
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -10,7 +9,9 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { InscriptionComponent } from './inscription/inscription.component';
-import { EtudiantComponent } from './etudiant/etudiant.component'; // Importez AppRoutingModule
+import { EtudiantComponent } from './etudiant/etudiant.component';
+import { MadickeComponent } from './madicke/madicke.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Importez AppRoutingModule
 // Importez AccueilComponent
 
 @NgModule({
@@ -19,16 +20,20 @@ import { EtudiantComponent } from './etudiant/etudiant.component'; // Importez A
     AccueilComponent,
     ConnexionComponent,
     InscriptionComponent,
-    EtudiantComponent // Ajoutez AccueilComponent aux déclarations
+    EtudiantComponent,
+    MadickeComponent // Ajoutez AccueilComponent aux déclarations
   ],
   imports: [
     BrowserModule,
    
     FormsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }
