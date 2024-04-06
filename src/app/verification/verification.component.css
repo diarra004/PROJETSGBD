@@ -1,0 +1,91 @@
+/* Style pour les cours prévus aujourd'hui */
+.container {
+    width: 80%; /* Largeur du conteneur */
+    margin: 20px auto; /* Centrer horizontalement */
+    padding: 20px;
+    background-color: #f9f9f9; /* Couleur de fond */
+    border: 1px solid #ddd; /* Bordure */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  }
+  .box{
+    width: 80%; /* Largeur du conteneur */
+    margin: 20px auto; /* Centrer horizontalement */
+    padding: 20px;
+    background-color: #f9f9f9; /* Couleur de fond */
+    border: 1px solid #ddd; /* Bordure */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Omb
+  }
+  h2 {
+    color: #333; /* Couleur du titre */
+  }
+  
+  ul {
+    list-style-type: none; /* Supprimer les puces */
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px; /* Marge entre les éléments de la liste */
+  }
+  
+  span {
+    margin-right: 10px; /* Espacement entre les spans */
+  }
+  
+  /* Style pour l'absence de cours prévu aujourd'hui */
+  p {
+    color: #777; /* Couleur du texte */
+  }
+  
+  /* Style pour la section de marquage de présence */
+  .container-mark-presence {
+    width: 80%; /* Largeur du conteneur */
+    margin: 20px auto; /* Centrer horizontalement */
+    padding: 20px;
+    background-color: #f9f9f9; /* Couleur de fond */
+    border: 1px solid #ddd; /* Bordure */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  }
+  
+  h3 {
+    color: #333; /* Couleur du titre */
+  }
+  
+  p {
+    color: #555; /* Couleur du texte */
+  }
+  
+  ul {
+    list-style-type: none; /* Supprimer les puces */
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px; /* Marge entre les éléments de la liste */
+  }
+  
+  /* Style pour les cases à cocher */
+  .mat-checkbox {
+    margin-right: 10px; /* Espacement à droite */
+  }
+  
+  /* Style pour le bouton de soumission */
+  .button-submit {
+    display: block; /* Afficher en bloc */
+    width: 100%; /* Prendre toute la largeur */
+    margin-top: 20px; /* Marge en haut */
+    padding: 10px; /* Espacement intérieur */
+    background-color: #007bff; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Supprimer la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointer */
+  }
+  
+  .button-submit:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+  }
+  

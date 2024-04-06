@@ -1,0 +1,30 @@
+.emploi-du-temps {
+    width: 80%; /* Réduire la largeur du tableau */
+    margin: 110px auto 0;
+    overflow-x: auto; /* Ajouter une barre de défilement horizontale si nécessaire */
+    margin-left: 18%;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 26px; /* Augmenter la taille des cellules */
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .heure {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  .he{
+    margin-left: 48%;
+  }
+  

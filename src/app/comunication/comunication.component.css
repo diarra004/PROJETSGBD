@@ -1,0 +1,6 @@
+.comm {
+    display: flex; /* Utiliser flexbox pour le positionnement */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+  }
+  
