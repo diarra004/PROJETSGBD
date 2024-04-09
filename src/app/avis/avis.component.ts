@@ -1,34 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-avis',
   templateUrl: './avis.component.html',
   styleUrls: ['./avis.component.css']
 })
-export class AvisComponent implements OnInit {
-  avis! : FormGroup;
+export class AvisComponent  {avisForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
-
-  ngOnInit(): void {
-    // Initialisation du formulaire
-    this.avis = this.formBuilder.group({
-      question1: ['', Validators.required],
-      question2: ['', Validators.required]
-      // Ajoutez d'autres champs de formulaire selon les besoins
+  constructor(private formBuilder: FormBuilder) {
+    this.avisForm = this.formBuilder.group({
+      course: ['', Validators.required],
+     
+      comments: ['']
     });
   }
 
-  // Méthode pour soumettre le formulaire d'avis
-  onSubmit() {
-    if (this.avis.valid) {
-      const avisResponses = this.avis.value;
-      console.log('Réponses à l\'avis :', avisResponses);
-      alert('Merci pour votre avis !'); // Simulation de la confirmation de soumission
-      this.avis.reset(); // Réinitialiser le formulaire après soumission (facultatif)
+  submitForm() {
+    if (this.avisForm.valid) {
+      const formData = this.avisForm.value;
+      console.log('Form submitted:', formData);
+      // Ajoutez ici la logique pour enregistrer l'avis (par exemple, via un service)
     } else {
-      alert('Veuillez remplir tous les champs du formulaire.');
+      // Gérer le formulaire invalide si nécessaire
     }
   }
 }

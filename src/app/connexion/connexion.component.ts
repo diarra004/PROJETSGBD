@@ -1,6 +1,11 @@
-// connexion.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from './auth.service';
+
+export interface AuthResponse {
+  token: string;
+  user : User ; // Ajoutez une propriété pour le rôle de l'utilisateur
+}
 
 @Component({
   selector: 'app-connexion',
@@ -10,29 +15,40 @@ import { Router } from '@angular/router';
 export class ConnexionComponent {
 
   hide: boolean = true;
+  email: string = '';
+  mot_de_passe: string = '';
+  errorMessage: string = '';
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   togglePasswordVisibility() {
     this.hide = !this.hide;
   }
-  email: string = '';
-  password: string = '';
-  isTeacher: boolean = false;
-
-  constructor(private router: Router) {}
 
   onSubmit() {
-    // Appel à votre service d'authentification pour vérifier les informations d'identification
-    // Vous devez appeler votre backend Node.js pour vérifier l'authentification et le rôle
-    if (this.email && this.password) {
-      // Exemple basique : redirection en fonction de la réponse
-      if (this.isTeacher) {
-        this.router.navigate(['/responsable']); // Redirection vers la page du responsable de classe
-      } else {
-        this.router.navigate(['/etudiant']); // Redirection vers la page de l'étudiant
-      }
+    if (this.email && this.mot_de_passe) {
+      this.authService.login(this.email, this.mot_de_passe).subscribe(
+        (response: AuthResponse) => {
+          if (response.role === 'respo') {
+            this.router.navigate(['/responsable']);
+          } else if (response.role === 'etudiant') {
+            this.router.navigate(['/etudiant']);
+          } else {
+            console.error('Rôle non pris en charge :', response.role);
+            this.errorMessage = 'Rôle non pris en charge';
+          }
+        },
+        (error) => {
+          console.error('Erreur de connexion :', error);
+          if (error.status === 401) {
+            this.errorMessage = 'Identifiants invalides';
+          } else {
+            this.errorMessage = 'Erreur de connexion';
+          }
+        }
+      );
+    } else {
+      this.errorMessage = 'Veuillez saisir l\'email et le mot de passe';
     }
   }
-
- 
- 
 }
