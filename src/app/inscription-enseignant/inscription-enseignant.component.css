@@ -1,0 +1,56 @@
+
+body{
+    background-image: url('/assets/Unknown.jpeg');
+    background-size: auto;
+    
+  
+  }
+  .container {
+    /* Styles pour le formulaire */
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #a2c2dd;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-top: 150px;
+  }
+  
+  .container input[type="text"],
+  .container input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .container input[type="submit"] {
+    width: 150px;
+    font-size: 100%;
+    background-color:  #d2d1d0;;
+    color: rgb(12, 11, 11);
+    cursor: pointer;
+    border-radius: 14px;
+    border: 1px solid white;
+  
+    padding: 14px 20px;
+  }
+  .container input[type="submit"]:hover {
+    background-color: #a1a3a7;
+  }
+  
+  .container a {
+    text-decoration: none;
+    color: rgb(71, 66, 70);
+    margin-top: 12px;
+    display: block;
+  }
+  
+  .register-link {
+    color: blue;
+  }
+  

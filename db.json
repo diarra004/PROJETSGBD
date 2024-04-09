@@ -1,0 +1,30 @@
+{
+  "productList": [
+    {
+      "id": "275e",
+      "professeur": "samba",
+      "matiere": "Syteme d'exploitation",
+      "heure": 24,
+      "rapport": "fais",
+      "date": "2024-04-11T00:00:00.000Z"
+    },
+    {
+      "id": "c124",
+      "professeur": "nguom",
+      "matiere": "reseau",
+      "heure": 67,
+      "rapport": "cours fais",
+      "date": "2024-04-04T00:00:00.000Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "user_name": "John Doe",
+      "comment": "This is a great product!"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
