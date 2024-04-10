@@ -18,7 +18,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   
 })
 export class RapportComponent implements   OnInit{
-  displayedColumns = ['id','professeur','matiere','heure','rapport','date'];
+  displayedColumns = ['matiere','rapport','date'];
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -32,10 +32,16 @@ export class RapportComponent implements   OnInit{
     this.dialog.open(DialogComponent, { width: '50%'
     });
   }
+
+  samaDialog(){
+    this.dialog.open(DialogComponent, { width: '50%'
+    });
+  }
 getAllProducts(){
-  this.api.getProduct()
+  this.api.getRapport()
   .subscribe({
     next:(res)=>{
+      console.log(res[0])
       this.dataSource = new  MatTableDataSource(res);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
@@ -45,6 +51,7 @@ getAllProducts(){
   }
 })
 }
+
 applyFilter(event: Event) {
   const filterValue = (event.target as HTMLInputElement).value;
   this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -52,5 +59,9 @@ applyFilter(event: Event) {
   if (this.dataSource.paginator) {
     this.dataSource.paginator.firstPage();
   }
+}
+
+alert(){
+  console.log("alert")
 }
 }

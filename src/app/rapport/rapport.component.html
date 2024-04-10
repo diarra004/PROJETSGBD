@@ -11,7 +11,7 @@
   <div class="container">
     <div style="margin-top: 10px;" class="table">
         <mat-form-field>
-            <mat-label>Filter</mat-label>
+            <mat-label>Filtrer</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
           </mat-form-field>
           
@@ -19,15 +19,15 @@
             <table mat-table [dataSource]="dataSource" matSort>
           
               <!-- ID Column -->
-              <ng-container matColumnDef="id">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+              <ng-container matColumnDef="rapport">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom Rapport</th>
+                <td mat-cell *matCellDef="let row"> {{row.nom}} </td>
               </ng-container>
 
-              <ng-container matColumnDef="professeur">
+              <!-- <ng-container matColumnDef="professeur">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Professeur </th>
-                <td mat-cell *matCellDef="let row"> {{row.professeur}} </td>
-              </ng-container>
+                <td mat-cell  *matCellDef="let row"> {{row.Professeur}} </td>
+              </ng-container> -->
           
               <!-- Progress Column -->
               <ng-container matColumnDef="matiere">
@@ -36,21 +36,18 @@
               </ng-container>
           
               <!-- Name Column -->
-              <ng-container matColumnDef="heure">
+              <!-- <ng-container matColumnDef="heure">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Heure/mois </th>
                 <td mat-cell *matCellDef="let row"> {{row.heure}} </td>
-              </ng-container>
+              </ng-container> -->
           
               <!-- Fruit Column -->
               <ng-container matColumnDef="date">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
-                <td mat-cell *matCellDef="let row"> {{row.date}} </td>
+                <td mat-cell *matCellDef="let row"> {{row.createdAt}} </td>
               </ng-container>
 
-              <ng-container matColumnDef="rapport">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Rapport </th>
-                <td mat-cell *matCellDef="let row"> {{row.rapport}} </td>
-              </ng-container>
+             
           
               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
