@@ -1,15 +1,9 @@
 
-body{
-  background-image: url('/assets/Unknown.jpeg');
-  
-
-}
 .container {
-  /* Styles pour le formulaire */
   width: 400px;
   margin: 0 auto;
   text-align: center;
-  background-color: #a2c2dd;
+  background-color: white;
   border: 1px solid #ddd;
   border-radius: 15px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -17,29 +11,25 @@ body{
   margin-top: 150px;
 }
 
-.container input[type="text"],
-.container input[type="password"] {
+.container mat-form-field {
   width: 100%;
-  padding: 12px 20px;
-  margin-bottom: 40px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  border: 1px solid #ddd;
+  margin-bottom: 0px;
+
+}
+.login-button {
+  width: 100%; /* Prend toute la largeur disponible */
+  font-size: 16px; /* Taille de la police */
+  background-color:gray; /* Couleur de fond */
+  color: #ffffff; /* Couleur du texte */
+  border: none; /* Supprimer la bordure */
+  border-radius: 5px; /* Bordure arrondie */
+  padding: 10px 20px; /* Rembourrage */
+  cursor: pointer; /* Curseur de souris au survol */
 }
 
-.container input[type="submit"] {
-  width: 150px;
-  font-size: 100%;
-  background-color:  #d2d1d0;;
-  color: rgb(12, 11, 11);
-  cursor: pointer;
-  border-radius: 14px;
-  border: 1px solid white;
-
-  padding: 14px 20px;
-}
-.container input[type="submit"]:hover {
-  background-color: #a1a3a7;
+/* Style au survol pour le bouton "Se connecter" */
+.login-button:hover {
+  background-color: #808b96; /* Couleur de fond au survol */
 }
 
 .container a {
@@ -52,3 +42,15 @@ body{
 .register-link {
   color: blue;
 }
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Espacement entre la case à cocher et le bouton de soumission */
+}
+
+.remember-forgot a{
+  color: black;
+}
+
+
