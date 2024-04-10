@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'; // Importez HttpClientModule
+
 
 
 
@@ -19,7 +21,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { VerificationComponent } from './verification/verification.component';
 import { AvisComponent } from './avis/avis.component';
-import { AuthService } from './services/auth.service';
 
 // Importez AccueilComponent
 
@@ -34,7 +35,7 @@ import { AuthService } from './services/auth.service';
     ComunicationComponent,
     VerificationComponent,
     AvisComponent,
-    AuthService
+   
   
   ],
   imports: [
@@ -45,7 +46,9 @@ import { AuthService } from './services/auth.service';
     BrowserAnimationsModule,
     MatInputModule,
     MatIconModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    HttpClientModule, 
+    
     
   ],
   providers: [],

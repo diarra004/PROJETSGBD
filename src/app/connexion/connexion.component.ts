@@ -19,6 +19,10 @@ export class ConnexionComponent {
   };
 
   constructor(private authService: AuthService, private router: Router) { }
+  togglePasswordVisibility() {
+    this.hide = !this.hide;
+  }
+
 
   login() {
     this.authService.login(this.credentials).pipe(
