@@ -4,22 +4,20 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { VerificationComponent } from './verification/verification.component';
 import { EtudiantComponent } from './etudiant/etudiant.component';
-
+import { EmploitempsComponent } from './emploitemps/emploitemps.component';
 import { ComunicationComponent } from './comunication/comunication.component';
 import { AvisComponent } from './avis/avis.component';
-import { EmploiComponent } from './emploi/emploi.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: AccueilComponent },
-  { path: 'connexion', component: ConnexionComponent },
+  { path: 'connexion', component: ConnexionComponent ,canActivate: [AuthGuard]  },
  
   {path : 'etudiant',component:EtudiantComponent},
- 
+  {path:'emploitemps',component:EmploitempsComponent},
   {path:'communication',component:ComunicationComponent},
   {path:'verification',component:VerificationComponent},
-  {path:'avis',component:AvisComponent},
-  {path:'emploi',component:EmploiComponent},
- 
+  {path:'avis',component:AvisComponent}
 ];
 
 @NgModule({

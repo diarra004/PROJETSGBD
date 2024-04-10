@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,11 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { VerificationComponent } from './verification/verification.component';
 import { AvisComponent } from './avis/avis.component';
-
-import { EmploiComponent } from './emploi/emploi.component';
-import { HttpClientModule } from '@angular/common/http';
-
-
+import { AuthService } from './services/auth.service';
 
 // Importez AccueilComponent
 
@@ -39,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     ComunicationComponent,
     VerificationComponent,
     AvisComponent,
-    EmploiComponent,
+    AuthService
   
   ],
   imports: [
@@ -50,10 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatInputModule,
     MatIconModule,
-    MatCheckboxModule,
-    ReactiveFormsModule,
-    HttpClientModule // Import du HttpClientModule
-   
+    MatCheckboxModule
     
   ],
   providers: [],

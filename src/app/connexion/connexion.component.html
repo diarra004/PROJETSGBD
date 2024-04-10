@@ -1,24 +1,26 @@
 <body><div class="container">
-    <form >
+    <form (ngSubmit)="login()">
       <h1>Connexion</h1>
       <!-- Utilisation du champ d'entrée matérielle pour le nom d'utilisateur avec une icône -->
       <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
-        <input matInput type="email" placeholder="Email" required id="email" [(ngModel)]="email">
+        <input matInput type="email" placeholder="Email" name="email" required [(ngModel)]="credentials.email">
+
         <mat-icon matPrefix>person</mat-icon>
       </mat-form-field>
   
       <!-- Utilisation du champ d'entrée matérielle pour le mot de passe avec une icône et un bouton pour le rendre visible ou non -->
       <mat-form-field appearance="fill">
         <mat-label>Mot de passe</mat-label>
-        <input matInput type="password" placeholder="Mot de passe" required id="mot_de_passe" [(ngModel)]="mot_de_passe">
+        <input matInput type="password" placeholder="Mot de passe" name="mot_de_passe" required [(ngModel)]="credentials.mot_de_passe">
         <mat-icon matPrefix>lock</mat-icon>
         <button mat-icon-button matSuffix type="button" (click)="togglePasswordVisibility()">
           <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
         
       </mat-form-field>
-     
+      
+
 
       <div class="remember-forgot">
         <mat-checkbox>Se souvenir de moi</mat-checkbox>
@@ -26,7 +28,7 @@
       </div>
   
       <!-- Bouton de soumission -->
-      <button type="submit" class="login-button">Se connecter</button>
+      <button type="submit" routerLink="/etudiant" class="login-button">Se connecter</button>
       
       <!-- Lien vers la récupération du mot de passe -->
       
