@@ -1,50 +1,9 @@
-.avis-container {
-  width: 60%;
-  margin: 0 auto; /* Centre le conteneur horizontalement */
-  padding: 20px;
-  
- 
-  margin-top: 100px;
-
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 15px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  text-align: center; /* Centre le texte du titre */
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centre les éléments du formulaire */
-}
-
-label {
-  margin-bottom: 8px;
-}
-
-select,
-textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  border: 1px solid gray;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  background-color: gray;
-  color: #fff;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #4f5051;
-}
+.container {
+    width: 80%; /* Largeur du conteneur */
+    margin: 20px auto; /* Centrer horizontalement */
+    padding: 20px;
+    background-color: #f9f9f9; /* Couleur de fond */
+    border: 1px solid #ddd; /* Bordure */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  }
