@@ -19,9 +19,13 @@
             <table mat-table [dataSource]="dataSource" matSort>
           
               <!-- ID Column -->
-              <ng-container matColumnDef="rapport">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom Rapport</th>
-                <td mat-cell *matCellDef="let row"> {{row.nom}} </td>
+              <ng-container matColumnDef="matiere">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Matiere </th>
+                <td mat-cell *matCellDef="let row"> {{row.matiere}} </td>
+              </ng-container>
+              <ng-container matColumnDef="Avis">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Avis</th>
+                <td mat-cell *matCellDef="let row"> {{row.contenu}} </td>
               </ng-container>
 
               <!-- <ng-container matColumnDef="professeur">
@@ -30,10 +34,7 @@
               </ng-container> -->
           
               <!-- Progress Column -->
-              <ng-container matColumnDef="matiere">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Matiere </th>
-                <td mat-cell *matCellDef="let row"> {{row.matiere}} </td>
-              </ng-container>
+             
           
               <!-- Name Column -->
               <!-- <ng-container matColumnDef="heure">

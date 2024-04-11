@@ -4,7 +4,6 @@ import { MatDialog } from "@angular/material/dialog";
 import { ApiService } from "../services/api.service";
 
 import { ViewChild } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
@@ -16,7 +15,7 @@ import { AvisDialogComponent } from "../avis-dialog/avis-dialog.component";
   styleUrls: ["./avis.component.css"],
 })
 export class AvisComponent {
-  displayedColumns = ["matiere", "rapport", "date"];
+  displayedColumns = ["Avis","matiere","date"];
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -24,13 +23,10 @@ export class AvisComponent {
   constructor(
     public dialog: MatDialog,
     private api: ApiService,
-    private Fb: FormBuilder
   ) {}
-  Form!: FormGroup;
+  
   ngOnInit(): void {
-    this.Form = this.Fb.group({
-      contenu: ["", [Validators.required]],
-    });
+   this.getAllAvis()
   }
   
 
@@ -45,5 +41,20 @@ export class AvisComponent {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  getAllAvis(){
+    this.api.getAvis()
+    .subscribe({
+      next:(res)=>{
+        console.log(res)
+        this.dataSource = new  MatTableDataSource(res);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+    },
+    error:(err)=>{
+      alert("Erreur lors de la recuperation des enregistrements")
+    }
+  })
   }
 }
