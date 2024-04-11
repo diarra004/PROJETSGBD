@@ -34,4 +34,22 @@ export class ApiService {
     );
     return access_token;
   }
+
+  postAvis(data:any){
+    const access_token = localStorage.getItem('access_Token') 
+    const headers ={
+      Authorization:`Bearer ${access_token}`
+    }
+    return this.http.post<any>("http://localhost:3000/avis/creer",data,{headers})
+  }
+
+  getAvis(){
+    const access_token = localStorage.getItem('access_Token') 
+    const headers ={
+      Authorization:`Bearer ${access_token}`
+    }
+
+    return this.http.get<any>("http://localhost:3000/avis/all",{headers})
+
+  }
 }

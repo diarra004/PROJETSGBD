@@ -1,31 +1,27 @@
-/* navbar.component.css */
-.sidebar {
-    width: 200px;
-    height: 100%;
-    background-color: #a2c2dd;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-  
-  .sidebar-menu {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px 0;
-  }
-  
-  .sidebar-menu li {
-    margin-bottom: 10px;
-  }
-  
-  .sidebar-menu li a {
-    display: block;
-    padding: 10px;
-    color: black;
-    text-decoration: none;
-  }
-  
-  .sidebar-menu li a:hover {
-    background-color: #a1a3a7;
-  }
-  
+.navbar {
+  background-color: gray; /* Couleur de fond de la navbar */
+  color: #fff; /* Couleur du texte */
+  padding: 30px; /* Espacement interne */
+
+}
+
+.navbar-menu {
+  list-style-type: none; /* Suppression des puces de liste */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  display: inline; /* Affichage en ligne pour placer les éléments côte à côte */
+  margin-right: 0px; /* Espacement entre les éléments */
+  margin-left: 170px;
+}
+
+.navbar-menu li a {
+  text-decoration: none; /* Suppression du soulignement des liens */
+  color: #fff; /* Couleur du texte des liens */
+}
+
+.navbar-menu li a:hover {
+  color: #ffd700; /* Couleur du texte des liens au survol */
+}
