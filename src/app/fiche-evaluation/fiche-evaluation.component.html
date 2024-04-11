@@ -1,1 +1,47 @@
-<p>fiche-evaluation works!</p>
+<!-- <p>fiche-evaluation works!</p> -->
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Fiche d'evaluation</h1>
+        <div class="container">/
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="position">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+              
+                
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef> Name </th>
+                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+              
+               
+                <ng-container matColumnDef="NoteCc">
+                  <th mat-header-cell *matHeaderCellDef> NoteCc </th>
+                  <td mat-cell *matCellDef="let element"> {{element.NoteCc}} </td>
+                </ng-container>
+              
+                
+                <ng-container matColumnDef="NoteDs">
+                  <th mat-header-cell *matHeaderCellDef> NoteDs </th>
+                  <td mat-cell *matCellDef="let element"> {{element.NoteDs}} </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              <!-- <form (ngSubmit)="ajouterElement()">
+                <input type="number" name="position" [(ngModel)]="nouveauElement.position" placeholder="Position">
+                <input type="text" name="name" [(ngModel)]="nouveauElement.name" placeholder="Name">
+                <input type="number" name="NoteCc" [(ngModel)]="nouveauElement.NoteCc" placeholder="NoteCc">
+                <input type="number" name="NoteDs" [(ngModel)]="nouveauElement.NoteDs" placeholder="NoteDs">
+                <button type="submit">Ajouter</button>
+              </form> -->
+
+        </div>
+    </body>
+</html>
