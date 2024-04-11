@@ -37,18 +37,8 @@ export class ConnexionComponent {
           if (res) {
             localStorage.setItem("access_Token", res.access_Token);
             localStorage.setItem("user", JSON.stringify(res.user));
-          }
-          if ((res.user.role == "etudiant")) {
-            this.router.navigate(["/etudiant"]);
-          }
-          if ((res.user.role == "responsable")) {
             this.router.navigate(["/menu-enseignant"]);
           }
-          if ((res.user.role == "rp" || res.user.role=='enseignant' || res.user.role=='chef')) {
-            this.router.navigate(["/menu-enseignant"]);
-          }
-
-          console.log(res.user);
         },
         error: () => {
           alert("Erreur d'ajout");

@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Donner un avis</h1>
+<div mat-dialog-content>
+    <form [formGroup]="Form">
+            <mat-form-field>
+            <mat-label>Matiére</mat-label>
+                <mat-select formControlName="matiere">
+                    <mat-option value="reseau">reseau</mat-option>
+                    <mat-option value="Syteme d'exploitation">Syteme d'exploitation</mat-option>
+                    <mat-option value="Dev mobile">Dev mobile</mat-option>
+                </mat-select>
+            </mat-form-field>    
+              <mat-form-field class="example-full-width">
+                <mat-label>Ecrire votre avis</mat-label>
+                <textarea matInput placeholder="Ex.Le cours de langage c ..." formControlName="contenu"></textarea>
+              </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>close</button>
+    <button mat-raised-button color="primary" mat-dialog-close (click)="sendAvis()">save</button>
+</div>

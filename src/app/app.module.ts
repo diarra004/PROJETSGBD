@@ -34,6 +34,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import { FicheEvaluationComponent } from './fiche-evaluation/fiche-evaluation.component';
 import { AvisComponent } from './avis/avis.component';
+import { AvisDialogComponent } from './avis-dialog/avis-dialog.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { AvisComponent } from './avis/avis.component';
     RapportComponent,
     DialogComponent,
     FicheEvaluationComponent,
-    AvisComponent, // Ajoutez AccueilComponent aux déclarations
+    AvisComponent,
+    AvisDialogComponent, // Ajoutez AccueilComponent aux déclarations
   ],
   imports: [
     BrowserModule,
