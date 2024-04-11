@@ -7,17 +7,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body  >
+<!-- <body  >
     <div class="container">
-    <form >
-        <h1>Connexion</h1>
-        <input type="text" placeholder="Nom d'utilisateur" required><br>
-        <input type="password" placeholder="mot de passe" required><br>
-        <input type="submit" value="Se connecter" routerLink="/etudiant"><br>
-        <a>Mot de passe oublié ?</a>
-        <a class="register-link" routerLink="/inscription">Vous n'avez pas de compte ? Inscrivez-vous</a>
-
-    </form>
+        <form [formGroup]="loginForm">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                    <input formControlName="email" matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Mot de Passe</mat-label>
+                        <input formControlName="mot_de_passe" matInput>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" mat-dialog-close (click)="sendFormData()">save</button>
+        </form>
     </div>
 </body>
-</html>
+</html> -->
+
+
+<body><div class="container">
+    <form [formGroup]="loginForm">
+      <h1>Connexion</h1>
+      <!-- Utilisation du champ d'entrée matérielle pour le nom d'utilisateur avec une icône -->
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Email" required id="email" formControlName="email">
+        <mat-icon matPrefix>person</mat-icon>
+      </mat-form-field>
+  
+      <!-- Utilisation du champ d'entrée matérielle pour le mot de passe avec une icône et un bouton pour le rendre visible ou non -->
+      <mat-form-field appearance="fill">
+        <mat-label>Mot de passe</mat-label>
+        <input matInput type="password" placeholder="Mot de passe" formControlName="mot_de_passe" required id="mot_de_passe">
+        <mat-icon matPrefix>lock</mat-icon>
+        <!-- <button mat-icon-button matSuffix type="button" (click)="togglePasswordVisibility()">
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button> -->
+        
+      </mat-form-field>
+     
+
+      <div class="remember-forgot">
+        <a  routerLink="/motdepasse" class="forgot-link">Mot de passe oublié ?</a>
+      </div>
+  
+      <!-- Bouton de soumission -->
+      <button (click)="sendFormData()"  class="login-button">Se connecter</button>
+      
+      <!-- Lien vers la récupération du mot de passe -->
+      
+    </form>
+  </div>
+  
+</body>

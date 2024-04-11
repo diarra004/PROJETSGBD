@@ -13,18 +13,17 @@ export class DialogComponent {
   constructor(private fb: FormBuilder, private api: ApiService) {}
   ngOnInit() {
     this.productForm = this.fb.group({
+      nomRapport: ['', [Validators.required]], 
       professeur: ['', [Validators.required]],  
       matiere: ['', [Validators.required]],
-      heure: ['', [Validators.required]], 
       rapport: ['', [Validators.required]],   
-      date: ['', [Validators.required]]
     })
 
 
   }
   ajouterRapport(){
     if(this.productForm.valid){
-      this.api.postProduct(this.productForm.value)
+      this.api.postRapport(this.productForm.value)
       .subscribe({
         next:(res)=>{
           alert("Produit ajouter avec succes")
@@ -34,6 +33,7 @@ export class DialogComponent {
 
         }
       })
+      console.log(this.productForm.value)
     }
   }
 }

@@ -33,6 +33,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import { FicheEvaluationComponent } from './fiche-evaluation/fiche-evaluation.component';
+import { AvisComponent } from './avis/avis.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FicheEvaluationComponent } from './fiche-evaluation/fiche-evaluation.co
     NavebarMenuComponent,
     RapportComponent,
     DialogComponent,
-    FicheEvaluationComponent, // Ajoutez AccueilComponent aux déclarations
+    FicheEvaluationComponent,
+    AvisComponent, // Ajoutez AccueilComponent aux déclarations
   ],
   imports: [
     BrowserModule,

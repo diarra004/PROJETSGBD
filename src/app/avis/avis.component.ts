@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { ApiService } from '../services/api.service';
@@ -7,15 +9,17 @@ import { ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-
-
 @Component({
-  selector: 'app-rapport',
-  templateUrl: './rapport.component.html',
-  styleUrls: ['./rapport.component.css']
-  
+  selector: 'app-avis',
+  templateUrl: './avis.component.html',
+  styleUrls: ['./avis.component.css']
 })
-export class RapportComponent implements   OnInit{
+export class AvisComponent {
+
+
+
+
+
   displayedColumns = ['matiere','rapport','date'];
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -62,4 +66,5 @@ applyFilter(event: Event) {
 alert(){
   console.log("alert")
 }
+
 }
