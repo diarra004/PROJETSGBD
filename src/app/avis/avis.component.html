@@ -5,7 +5,7 @@
     </button>
     <span>Rapports</span>
     <span class="example-spacer"></span>
-    <button mat-flat-button (click)="openDialog()" color="warn">Donner un avis</button>
+    <button mat-flat-button (click)="openDialog()" color="warn" *ngIf="user.role=='etudiant' || user.role=='responsable'" >Donner un avis</button>
     
   </mat-toolbar>
   <div class="container">
