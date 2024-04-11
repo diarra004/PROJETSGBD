@@ -12,7 +12,10 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 })
 export class ConnexionComponent {
   loginForm!: FormGroup;
-
+  hide: boolean = true;
+  togglePasswordVisibility() {
+    this.hide = !this.hide;
+  }
   constructor(
     private api: ApiService,
     private fb: FormBuilder,
@@ -33,12 +36,15 @@ export class ConnexionComponent {
           // console.log(res)
           if (res) {
             localStorage.setItem("access_Token", res.access_Token);
-            localStorage.setItem("user", res.user);
+            localStorage.setItem("user", JSON.stringify(res.user));
           }
-          if ((res.user.role = "etudiant")) {
+          if ((res.user.role == "etudiant")) {
             this.router.navigate(["/etudiant"]);
           }
-          if ((res.user.role = "enseignant")) {
+          if ((res.user.role == "responsable")) {
+            this.router.navigate(["/menu-enseignant"]);
+          }
+          if ((res.user.role == "rp" || res.user.role=='enseignant' || res.user.role=='chef')) {
             this.router.navigate(["/menu-enseignant"]);
           }
 
