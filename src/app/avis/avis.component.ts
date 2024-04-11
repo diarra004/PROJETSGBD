@@ -27,9 +27,11 @@ export class AvisComponent {
   
   ngOnInit(): void {
    this.getAllAvis()
+
+  
   }
   
-
+  user = JSON.parse(localStorage.getItem('user')as string)
   openDialog() {
     this.dialog.open(AvisDialogComponent, { width: "50%" });
   }
