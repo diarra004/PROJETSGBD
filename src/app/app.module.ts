@@ -1,3 +1,4 @@
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgModule } from '@angular/core';
 
 
@@ -38,6 +39,26 @@ import { AvisDialogComponent } from './avis-dialog/avis-dialog.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { ExploiterComponent } from './exploiter/exploiter.component';
 import { PvComponent } from './pv/pv.component';
+import { EmploisDuTempsComponent } from './emplois-du-temps/emplois-du-temps.component';
+import localeFr from "@angular/common/locales/fr";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { registerLocaleData } from "@angular/common";
+import {
+  CalendarDateFormatter,
+  CalendarModule,
+  DateAdapter,
+  DateFormatterParams,
+} from "angular-calendar";
+
+registerLocaleData(localeFr);
+class CustumDateFormater extends CalendarDateFormatter {
+  public override dayViewHour({ date, locale }: DateFormatterParams): string {
+    return new Intl.DateTimeFormat(locale, {hour:'numeric',minute:'numeric'}).format(date)
+  }
+  public override weekViewHour({ date, locale }: DateFormatterParams): string {
+    return new Intl.DateTimeFormat(locale, {hour:'numeric',minute:'numeric'}).format(date)
+  }
+}
 
 @NgModule({
   declarations: [
@@ -55,7 +76,8 @@ import { PvComponent } from './pv/pv.component';
     AvisComponent,
     AvisDialogComponent,
     ExploiterComponent,
-    PvComponent, // Ajoutez AccueilComponent aux déclarations
+    PvComponent,
+    EmploisDuTempsComponent, // Ajoutez AccueilComponent aux déclarations
   ],
   imports: [
     BrowserModule,
@@ -79,9 +101,14 @@ import { PvComponent } from './pv/pv.component';
     MatPaginatorModule,
     MatSortModule,
     MatMenuModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
+    NgbModule,
     
   ],
-  providers: [],
+  providers: [ { provide: CalendarDateFormatter, useClass: CustumDateFormater}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
