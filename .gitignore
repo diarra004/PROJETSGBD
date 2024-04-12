@@ -41,6 +41,7 @@ testem.log
 /typings
 
 # System files
+/node_modules
 .DS_Store
 Thumbs.db
 >>>>>>> 6a17d0f44027c923ece45581f4a5c8cad2544380
