@@ -10,6 +10,8 @@ import { NavebarMenuComponent } from './navebar-menu/navebar-menu.component';
 import { RapportComponent } from './rapport/rapport.component';
 import { FicheEvaluationComponent } from './fiche-evaluation/fiche-evaluation.component';
 import { AvisComponent } from './avis/avis.component';
+import { ExploiterComponent } from './exploiter/exploiter.component';
+import { PvComponent } from './pv/pv.component';
 
 const routes: Routes = [
   { path: '', component: AccueilComponent },
@@ -21,7 +23,9 @@ const routes: Routes = [
   {path: 'navebar-menu', component: NavebarMenuComponent},
   {path: 'rapport', component: RapportComponent},
   {path: 'fiche-evaluation', component: FicheEvaluationComponent},
-  {path: 'avis', component: AvisComponent}
+  {path: 'avis', component: AvisComponent},
+  {path: 'exploiter', component: ExploiterComponent},
+  {path: 'pv', component: PvComponent}
 
   
 ];
