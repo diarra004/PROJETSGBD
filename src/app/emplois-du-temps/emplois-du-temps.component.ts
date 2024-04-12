@@ -81,7 +81,6 @@ export class EmploisDuTempsComponent {
   ];
 
   refresh = new Subject<void>();
-
   events: CalendarEvent[] = [
     {
       start: subDays(startOfDay(new Date()), 1),
