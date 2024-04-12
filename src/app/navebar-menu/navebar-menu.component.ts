@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-navebar-menu',
   templateUrl: './navebar-menu.component.html',
@@ -8,4 +9,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class NavebarMenuComponent {
 
+  constructor(private router: Router){}
+deconnexion(){
+  this.router.navigate(['/connexion']);
+  
+}
 }

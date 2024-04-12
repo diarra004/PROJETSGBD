@@ -14,6 +14,22 @@
         <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" ariaCurrentWhenActive="page"
          class="mr-5 hover:text-gray-900">Contact</a>
         <!-- <a class="mr-5 hover:text-gray-900">Fourth Link</a> -->
+        <div>
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>reorder<</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="deconnexion()">
+              <mat-icon>input</mat-icon>
+              <span>Deconnexion</span>
+            </button>
+            <button mat-menu-item>
+
+              <mat-icon>person</mat-icon>
+              <span>Profil</span>
+            </button>
+          </mat-menu>
+        </div>
       </nav>
       <!-- <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">

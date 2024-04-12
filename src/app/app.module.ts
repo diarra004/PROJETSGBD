@@ -35,6 +35,9 @@ import {MatSortModule} from '@angular/material/sort';
 import { FicheEvaluationComponent } from './fiche-evaluation/fiche-evaluation.component';
 import { AvisComponent } from './avis/avis.component';
 import { AvisDialogComponent } from './avis-dialog/avis-dialog.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { ExploiterComponent } from './exploiter/exploiter.component';
+import { PvComponent } from './pv/pv.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,9 @@ import { AvisDialogComponent } from './avis-dialog/avis-dialog.component';
     DialogComponent,
     FicheEvaluationComponent,
     AvisComponent,
-    AvisDialogComponent, // Ajoutez AccueilComponent aux déclarations
+    AvisDialogComponent,
+    ExploiterComponent,
+    PvComponent, // Ajoutez AccueilComponent aux déclarations
   ],
   imports: [
     BrowserModule,
@@ -72,7 +77,8 @@ import { AvisDialogComponent } from './avis-dialog/avis-dialog.component';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatMenuModule,
     
   ],
   providers: [],
