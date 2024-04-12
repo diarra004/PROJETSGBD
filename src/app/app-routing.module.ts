@@ -10,6 +10,7 @@ import { NavebarMenuComponent } from './navebar-menu/navebar-menu.component';
 import { RapportComponent } from './rapport/rapport.component';
 import { FicheEvaluationComponent } from './fiche-evaluation/fiche-evaluation.component';
 import { AvisComponent } from './avis/avis.component';
+import { EmploisDuTempsComponent } from './emplois-du-temps/emplois-du-temps.component';
 
 const routes: Routes = [
   { path: '', component: AccueilComponent },
@@ -21,7 +22,9 @@ const routes: Routes = [
   {path: 'navebar-menu', component: NavebarMenuComponent},
   {path: 'rapport', component: RapportComponent},
   {path: 'fiche-evaluation', component: FicheEvaluationComponent},
-  {path: 'avis', component: AvisComponent}
+  {path: 'avis', component: AvisComponent},
+  {path: 'emplois-du-temps', component: EmploisDuTempsComponent}
+
 
   
 ];
