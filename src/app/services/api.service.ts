@@ -59,4 +59,12 @@ export class ApiService {
     }
     return this.http.post<any>("http://localhost:3000/pv/creer",data,{headers})
   } 
-}
+  getPv(){
+    const access_token = localStorage.getItem('access_Token') 
+    const headers ={
+      Authorization:`Bearer ${access_token}`
+    }
+    return this.http.get<any>("http://localhost:3000/pv/all",{headers})
+  
+}}
+
