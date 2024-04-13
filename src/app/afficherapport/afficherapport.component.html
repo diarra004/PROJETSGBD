@@ -1,14 +1,5 @@
-<!-- <p>rapport works!</p> -->
-<mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon></mat-icon>
-    </button>
-    <span>Avis des étudiants</span>
-    <span class="example-spacer"></span>
-    <button mat-flat-button (click)="openDialog()" color="warn" *ngIf="user.role=='etudiant' || user.role=='responsable'" >Donner un avis</button>
-    
-  </mat-toolbar>
-  <div class="container">
+<!-- <p>afficherapport works!</p> -->
+<div class="container">
     <div style="margin-top: 10px;" class="table">
         <mat-form-field>
             <mat-label>Filtrer</mat-label>
@@ -19,13 +10,9 @@
             <table mat-table [dataSource]="dataSource" matSort>
           
               <!-- ID Column -->
-              <ng-container matColumnDef="matiere">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Matiere </th>
-                <td mat-cell *matCellDef="let row"> {{row.matiere}} </td>
-              </ng-container>
-              <ng-container matColumnDef="Avis">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header>Avis</th>
-                <td mat-cell *matCellDef="let row"> {{row.contenu}} </td>
+              <ng-container matColumnDef="rapport">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom Rapport</th>
+                <td mat-cell *matCellDef="let row"> {{row.nom}} </td>
               </ng-container>
 
               <!-- <ng-container matColumnDef="professeur">
@@ -34,7 +21,10 @@
               </ng-container> -->
           
               <!-- Progress Column -->
-             
+              <ng-container matColumnDef="matiere">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Matiere </th>
+                <td mat-cell *matCellDef="let row"> {{row.matiere}} </td>
+              </ng-container>
           
               <!-- Name Column -->
               <!-- <ng-container matColumnDef="heure">

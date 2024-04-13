@@ -1,4 +1,4 @@
-import { Component,  OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { ApiService } from '../services/api.service';
@@ -9,37 +9,25 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-exploiter',
-  templateUrl: './exploiter.component.html',
-  styleUrls: ['./exploiter.component.css']
+  selector: 'app-afficherapport',
+  templateUrl: './afficherapport.component.html',
+  styleUrls: ['./afficherapport.component.css']
 })
-export class ExploiterComponent implements OnInit{
+export class AfficherapportComponent implements  OnInit{
+
   displayedColumns = ['matiere','rapport','date'];
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  afficheColumns = ['date','lieu','objet','decision','contenu'];
-  Samadata!: MatTableDataSource<any>;
-  @ViewChild(MatPaginator) slid!: MatPaginator;
-  @ViewChild(MatSort) arrange!: MatSort;
+  
   
 
-  constructor(public dialog: MatDialog, private api : ApiService) {}
+  constructor(private api : ApiService) {}
   ngOnInit(): void {
     this.getAllProducts();
-    this.getAllPv();
   }
 
-  openDialog() {
-    this.dialog.open(DialogComponent, { width: '50%'
-    });
-  }
-
-  samaDialog(){
-    this.dialog.open(DialogComponent, { width: '50%'
-    });
-  }
 getAllProducts(){
   this.api.getRapport()
   .subscribe({
@@ -68,29 +56,9 @@ alert(){
   console.log("alert")
 }
 
-getAllPv(){
-  this.api.getPv()
-  .subscribe({
-    next:(res)=>{
-      console.log(res)
-      this.Samadata = new  MatTableDataSource(res);
-      this.Samadata.paginator = this.slid;
-      this.Samadata.sort = this.arrange;
-  },
-  error:(err)=>{
-    alert("Erreur lors de la recuperation des enregistrements")
-  },
-})
+
+
 }
 
 
-isComponentVisible = false
-afficher(){
-  this.isComponentVisible = true;
-}
-composantvisible = false
-cacher(){
-  this.composantvisible=true;
-}
 
-}

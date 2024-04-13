@@ -13,6 +13,8 @@ import { AvisComponent } from './avis/avis.component';
 import { ExploiterComponent } from './exploiter/exploiter.component';
 import { PvComponent } from './pv/pv.component';
 import { EmploisDuTempsComponent } from './emplois-du-temps/emplois-du-temps.component';
+import { AffichepvComponent } from './affichepv/affichepv.component';
+import { AfficherapportComponent } from './afficherapport/afficherapport.component';
 
 const routes: Routes = [
   { path: '', component: AccueilComponent },
@@ -27,7 +29,9 @@ const routes: Routes = [
   {path: 'avis', component: AvisComponent},
   {path: 'exploiter', component: ExploiterComponent},
   {path: 'pv', component: PvComponent},
-  { path: 'emplois-du-temps', component: EmploisDuTempsComponent }
+  { path: 'emplois-du-temps', component: EmploisDuTempsComponent },
+  { path: 'affichepv', component: AffichepvComponent },
+  { path: 'afficherapport', component: AfficherapportComponent }
 
   
 ];

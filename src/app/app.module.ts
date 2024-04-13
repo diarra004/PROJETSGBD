@@ -49,6 +49,8 @@ import {
   DateAdapter,
   DateFormatterParams,
 } from "angular-calendar";
+import { AfficherapportComponent } from './afficherapport/afficherapport.component';
+import { AffichepvComponent } from './affichepv/affichepv.component';
 
 registerLocaleData(localeFr);
 class CustumDateFormater extends CalendarDateFormatter {
@@ -77,7 +79,9 @@ class CustumDateFormater extends CalendarDateFormatter {
     AvisDialogComponent,
     ExploiterComponent,
     PvComponent,
-    EmploisDuTempsComponent, // Ajoutez AccueilComponent aux déclarations
+    EmploisDuTempsComponent,
+    AfficherapportComponent,
+    AffichepvComponent, // Ajoutez AccueilComponent aux déclarations
   ],
   imports: [
     BrowserModule,
@@ -106,6 +110,7 @@ class CustumDateFormater extends CalendarDateFormatter {
       useFactory: adapterFactory,
     }),
     NgbModule,
+    
     
   ],
   providers: [ { provide: CalendarDateFormatter, useClass: CustumDateFormater}],
